@@ -43,38 +43,38 @@ public class SpringApiApplication {
 	// 	return liquibase;
 	// }
 
-	@Bean
-	public CommandLineRunner demo(DataRepository repository) {
-		return (args) -> {
-			// save a few customers
-			repository.save(new Data("student", "{'name':'John','code':'12345'}"));
-			repository.save(new Data("student", "{'name':'Jack','code':'12345'}"));
-			repository.save(new Data("teacher", "{'name':'Kim','code':'12345'}"));
-			repository.save(new Data("teacher", "{'name':'David','code':'12345'}"));
+	// @Bean
+	// public CommandLineRunner demo(DataRepository repository) {
+	// 	return (args) -> {
+	// 		// save a few customers
+	// 		repository.save(new Data("student", "{'name':'John','code':'12345'}"));
+	// 		repository.save(new Data("student", "{'name':'Jack','code':'12345'}"));
+	// 		repository.save(new Data("teacher", "{'name':'Kim','code':'12345'}"));
+	// 		repository.save(new Data("teacher", "{'name':'David','code':'12345'}"));
 
-			// fetch all data
-			log.info("Data found with findAll():");
-			log.info("-------------------------------");
-			for (Data data : repository.findAll()) {
-				log.info(data.toString());
-			}
-			log.info("");
+	// 		// fetch all data
+	// 		log.info("Data found with findAll():");
+	// 		log.info("-------------------------------");
+	// 		for (Data data : repository.findAll()) {
+	// 			log.info(data.toString());
+	// 		}
+	// 		log.info("");
 
-			// fetch an individual customer by ID
-			Data data = repository.findById(1L);
-			log.info("Data found with findById(1L):");
-			log.info("--------------------------------");
-			log.info(data.toString());
-			log.info("");
+	// 		// fetch an individual customer by ID
+	// 		Data data = repository.findById(1L);
+	// 		log.info("Data found with findById(1L):");
+	// 		log.info("--------------------------------");
+	// 		log.info(data.toString());
+	// 		log.info("");
 
-			// fetch data by name
-			log.info("Data found with findByName('student'):");
-			log.info("--------------------------------------------");
-			repository.findByName("student").forEach(student -> {
-				log.info(student.toString());
-			});
-			log.info("");
-		};
-	}
+	// 		// fetch data by name
+	// 		log.info("Data found with findByName('student'):");
+	// 		log.info("--------------------------------------------");
+	// 		repository.findByName("student").forEach(student -> {
+	// 			log.info(student.toString());
+	// 		});
+	// 		log.info("");
+	// 	};
+	// }
 
 }
