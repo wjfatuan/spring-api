@@ -10,6 +10,8 @@ import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.http.MediaType;
 
+// import liquibase.integration.spring.SpringLiquibase;
+
 @SpringBootApplication
 public class SpringApiApplication {
 
@@ -33,6 +35,13 @@ public class SpringApiApplication {
 			}
 		};
 	}
+
+	// @Bean
+	// public SpringLiquibase liquibase() {
+	// 	SpringLiquibase liquibase = new SpringLiquibase();
+	// 	liquibase.setChangeLog("classpath:liquibase-changeLog.xml");
+	// 	return liquibase;
+	// }
 
 	@Bean
 	public CommandLineRunner demo(DataRepository repository) {
