@@ -13,6 +13,4 @@ public interface DataRepository extends CrudRepository<Data, Long> {
 
     List<Data> findByName(@Param("name") String name);
 
-    Data findById(long id);
-
 }
