@@ -14,7 +14,7 @@ import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 
 @Entity
-@TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
+//@TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
 public class Data {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -22,7 +22,7 @@ public class Data {
     private String name;
     //@Type(type="jsonb")
     //@Column(columnDefinition = "jsonb")
-    @Basic(fetch = FetchType.LAZY)
+    //@Basic(fetch = FetchType.LAZY)
     private String data;
 
     protected Data() {}
@@ -35,6 +35,18 @@ public class Data {
     @Override
     public String toString() {
         return String.format("{id=%d, name=%s, data=%s}", id, name, data);
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
 }
