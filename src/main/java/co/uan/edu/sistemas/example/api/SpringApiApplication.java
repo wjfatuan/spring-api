@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
+import org.springframework.http.MediaType;
 
 @SpringBootApplication
 public class SpringApiApplication {
@@ -27,6 +28,8 @@ public class SpringApiApplication {
 			public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
 				config.setBasePath("/api/v1");
 				config.exposeIdsFor(Data.class);
+				config.setDefaultMediaType(MediaType.APPLICATION_JSON);
+				config.useHalAsDefaultJsonMediaType(false);
 			}
 		};
 	}
