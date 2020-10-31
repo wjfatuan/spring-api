@@ -1,6 +1,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.3.4.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'org.liquibase.gradle' version '2.0.3'
 	id 'java'
 }
 
@@ -16,7 +17,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'com.vladmihalcea:hibernate-types-52:2.3.4'
-	//implementation 'org.flywaydb:flyway-core'
+	liquibaseRuntime 'org.liquibase:liquibase-core'
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {

@@ -1,0 +1,28 @@
+databaseChangeLog:  
+  -  preConditions:  
+    - runningAs:  
+        username:  liquibase  
+  -  changeSet:  
+      id:  1  
+      author:  wjfatuan  
+      changes:  
+        -  createTable:  
+            tableName:  data  
+            columns:  
+              -  column:  
+                  name:  id  
+                  type:  int  
+                  autoIncrement:  true  
+                  constraints:  
+                    primaryKey:  true  
+                    nullable:  false  
+              -  column:  
+                  name:  name  
+                  type:  varchar(256)  
+                  constraints:  
+                    nullable:  false  
+              -  column:  
+                  name:  data  
+                  type:  clob  
+                  constraints:  
+                    nullable:  true  
